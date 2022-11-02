@@ -23,9 +23,7 @@ server.awaitTermination();
 
 ### 自定义客户端核心
 ```java
-ManagedChannelImpl channel = ManagedChannelBuilder.forAddress(host, port)
-                              .usePlaintext()
-                              .build();
+ManagedChannelImpl channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
 DemoServiceGrpc.DemoServiceBlockingStub stub = DemoServiceGrpc.newBlockingStub(channel);
 stub.login(LoginRequest.getDefaultInstance());
 ```
